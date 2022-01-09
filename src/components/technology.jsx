@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 // COMPONENT
 import SliderComponent from "./technology.slider";
-// ICON
-import loadingIcon from "../assets/shared/loading.png";
+
 
 const TechComponent = ({ data }) => {
   const [technology, setTechnology] = useState(null);
@@ -31,7 +30,7 @@ const TechComponent = ({ data }) => {
           setItem={setItem}
         />
       ) : (
-        <span className="loading"><img src={loadingIcon} alt="" /></span>
+        <span className="loading"></span>
       )}
     </>
   );
