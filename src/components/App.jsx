@@ -11,7 +11,7 @@ import "../scss/index.scss";
 
 const AppComponent = () => {
   const URL =
-  "https://raw.githubusercontent.com/myoblivion/space-tour-fem/main/data_13.json";
+  "https://raw.githubusercontent.com/myoblivion/frontendmentor-order-summary/main/data_13.json";
 
   const getData = async () => {
     const response = await fetch(URL);
