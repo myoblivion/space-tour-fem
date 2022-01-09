@@ -1,0 +1,165 @@
+@use "../components/mixins.scss" as mix;
+
+.technology-wrapper {
+  width: 90%;
+  margin-left: 10%;
+  min-height: 70vh;
+  .technology-header {
+    h1 {
+      color: #fff;
+      font-family: "Barlow Condensed", sans-serif;
+      font-weight: 500;
+      font-size: 1.8vw;
+      padding: 0.5em;
+      span {
+        padding-right: 0.5em;
+        color: rgb(112, 89, 89);
+      }
+    }
+  }
+  .technology-body {
+    @include mix.displayFlex(row-reverse, center, inherit);
+    .control-slider {
+      @include mix.displayFlex(column, flex-start, center);
+      position: absolute;
+      width: 10%;
+      left: 10%;
+      gap: 1.5em;
+      button {
+        display: block;
+        width: 90px;
+        height: 90px;
+        background-color: transparent;
+        font-family: "Bellefair", serif;
+        color: #fff;
+        font-size: 2.5vw;
+        border: 1px solid gray;
+        border-radius: 100%;
+        cursor: pointer;
+        transition: 0.5s ease;
+        &:hover {
+          background-color: #fff !important;
+          color: #000;
+        }
+      }
+    }
+    .tech-img {
+      width: 40%;
+      img {
+        width: 100%;
+      }
+    }
+    .tech-info {
+      display: block;
+      width: 45%;
+      color: #fff;
+      animation: appear 1s ease;
+      span {
+        font-family: "Barlow Condensed", sans-serif;
+        color: rgb(172, 142, 142);
+        font-weight: lighter;
+      }
+      h1 {
+        font-family: "Bellefair", serif;
+        font-size: 4vw;
+        color: #fff;
+        font-weight: lighter;
+        margin: 0;
+      }
+      p {
+        width: 70%;
+        font-family: "Barlow", sans-serif;
+        font-size: 1.1vw;
+        line-height: 2;
+        color: rgba(255, 255, 255, 0.877);
+        padding: 1em;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .technology-wrapper {
+    width: 100%;
+    margin-left: 0;
+    min-height: inherit;
+    .technology-header {
+      h1 {
+        font-size: 2.5vw;
+      }
+    }
+    .technology-body {
+      flex-direction: column;
+      .tech-img {
+        width: 100%;
+      }
+      .control-slider {
+        margin-top: 4em;
+        width: 100%;
+        flex-direction: row;
+        position: initial;
+        button {
+          width: 70px;
+          height: 70px;
+        }
+      }
+      .tech-info {
+        width: 70%;
+        margin-top: 3em;
+        span {
+          display: block;
+          width: 100%;
+          text-align: center;
+          color: rgb(211, 202, 202);
+          font-size: 3vw;
+        }
+        h1 {
+          display: block;
+          width: 100%;
+          font-size: 7vw;
+          margin: 0em;
+          margin-top: 0.5em;
+          text-align: center;
+        }
+        p {
+          display: block;
+          width: 100%;
+          font-size: 2.5vw;
+          padding: 0em;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .technology-wrapper {
+    .technology-header {
+      h1 {
+        font-size: 6vw;
+        text-align: center;
+      }
+    }
+    .technology-body {
+      .control-slider {
+        button {
+          width: 50px;
+          height: 50px;
+          font-size: 5vw;
+        }
+      }
+      .tech-info {
+        span {
+          font-size: 4vw;
+        }
+        h1 {
+          font-size: 8vw;
+        }
+        p {
+          font-size: 3.5vw;
+        }
+      }
+    }
+  }
+}

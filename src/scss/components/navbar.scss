@@ -1,0 +1,158 @@
+@use "../components/mixins" as mixin;
+
+header {
+    @include mixin.displayFlex(row, center, center);
+    width: 100%;
+    .logo {
+        width: 50%;
+        padding-left: 2em;
+        margin-top: 2em;
+        position: relative;
+        img {
+            width: 5%;
+        }
+        hr {
+            width: 90%;
+            position: absolute;
+            border: none;
+            border-bottom: 1px solid rgba(128, 128, 128, 0.501);
+            top: 20%;
+            right: -4%;
+            z-index: 4;
+        }
+    }
+    .bars-navbar {
+        display: none !important;
+    }
+    .navbar {
+        @include mixin.displayFlex(row, center, center);
+        width: 65%;
+        background-color: rgba(128, 109, 109, 0.2);
+        backdrop-filter: blur(10px);
+        margin-top: 2em;
+        .close {
+            display: none;
+        }
+        li a {
+            display: block;
+            color: rgba(255, 255, 255, 0.7);
+            margin-left: 1em;
+            margin-right: 1em;
+            padding-top: 2em;
+            padding-bottom: 2em;
+            border-bottom: 2px solid transparent;
+            font-family: "Barlow Condensed", sans-serif;
+            transition: 0.5 ease;
+            font-size: 1vw;
+            strong {
+                color: white;
+            }
+            &:hover {
+                border-bottom: 2px solid #fff !important;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    header {
+        width: 100%;
+        .logo {
+            width: 30%;
+            img {
+                width: 20%;
+            }
+            hr {
+                display: none;
+            }
+        }
+        .bars-navbar {
+            display: none !important;
+        }
+        .navbar {
+            width: 70%;
+            li a {
+                font-size: 2.1vw;
+                strong {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    header {
+        width: auto;
+        .navbar-outside {
+            display: block;
+            position: fixed;
+            width: 100%;
+            min-height: 100vh;
+            background-color: rgba(0, 0, 0, 0.309);
+            top: 0;
+            z-index: 3;
+        }
+        .logo {
+            width: 30%;
+            padding-left: 0;
+            img {
+                width: 12vw;
+            }
+            hr {
+                display: none;
+            }
+        }
+        .bars-navbar {
+            @include mixin.displayFlex(row,center,flex-end);
+            display: flex !important;
+            width: 50%; 
+            margin-top: 2em;
+            z-index: 5;
+        }
+        .navbar {
+            width: 60%;
+            position: fixed;
+            min-height: 100vh;
+            top: 0;
+            right: 0;
+            flex-direction: column;
+            justify-content: flex-start;
+            margin-top: 0;
+            padding: 0;
+            z-index: 5;
+            transition: 0.3s ease-in-out;
+            backdrop-filter: blur(20px);
+            .close {
+                display: block;
+                width: 100%;
+                padding: 3em 0;
+                position: relative;
+                img {
+                    position: absolute;
+                    top: 20%;
+                    right: 10%;
+                }
+            }
+            li {
+                display: block;
+                width: 100%;
+                a {
+                    display: inline-block;
+                    width: 100%;
+                    font-size: 4vw;
+                    padding: 1em;
+                    border-bottom: none !important;
+                    strong {
+                        display: inline-block;
+                        padding-right: 0.5em;
+                    }
+                    &:hover {
+                        border-bottom: none !important;
+                    }
+                }
+            }
+        }
+    }
+}

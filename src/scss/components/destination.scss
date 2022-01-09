@@ -1,0 +1,199 @@
+@use "../components/mixins" as mixin;
+.wrapper {
+  .content {
+    @include mixin.displayFlex(row, center, center);
+    width: 75%;
+    margin: auto;
+    min-height: 75vh;
+    .title-img {
+      @include mixin.displayFlex(column, start, center);
+      width: 50%;
+      padding: 1em;
+      h1 {
+        color: #fff;
+        font-family: "Barlow Condensed", sans-serif;
+        font-weight: 500;
+        font-size: 1.8vw;
+        padding: 0.5em;
+        span {
+          padding-right: 0.5em;
+          color: rgb(112, 89, 89);
+        }
+      }
+      img {
+        width: 90%;
+        padding: 2em;
+        animation: rotate 50s infinite linear;
+        cursor: grab;
+      }
+    }
+    .wrapper-slider {
+      display: inline-block;
+      width: 40%;
+      padding: 2em;
+      margin-top: -2em;
+      color: #fff;
+      .header-slider {
+        @include mixin.displayFlex(row, center, flex-start);
+        button {
+          display: block;
+          padding: 0.5em;
+          background-color: transparent;
+          border: none;
+          font-family: "Barlow Condensed", sans-serif;
+          font-weight: 300;
+          font-size: 1.2vw;
+          color: rgba(255, 255, 255, 0.849);
+          cursor: pointer;
+          transition: 0.5s ease;
+        }
+      }
+      .slider {
+        .content-slider {
+          display: block;
+          h1 {
+            font-family: "Bellefair", serif;
+            font-weight: 500;
+            font-size: 5vw;
+            color: rgb(255, 255, 255);
+            margin: 0;
+          }
+          p {
+            font-family: "Barlow", sans-serif;
+            font-size: 1.1vw;
+            color: rgba(255, 255, 255, 0.89);
+            line-height: 2;
+            text-align: justify;
+          }
+          hr {
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid gray;
+          }
+          .info-slider {
+            @include mixin.displayFlex(row, center, center);
+            .info-box {
+              display: block;
+              width: 50%;
+              padding: 1em;
+              h2 {
+                font-size: 1vw;
+                font-family: "Barlow Condensed", sans-serif;
+                font-weight: 500;
+                color: rgba(255, 255, 255, 0.815);
+              }
+              span {
+                font-size: 1.7vw;
+                font-family: "Bellefair", sans-serif;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    .content {
+      flex-direction: column;
+      width: 100%;
+      .title-img {
+        width: 95%;
+        h1 {
+          font-size: 3vw;
+        }
+        img {
+          width: 65%;
+          margin: auto;
+        }
+      }
+      .wrapper-slider {
+        width: 85%;
+        .header-slider {
+          justify-content: center;
+          button {
+            font-size: 3vw;
+          }
+        }
+        .slider {
+          .content-slider {
+            h1 {
+              font-size: 15vw;
+              text-align: center;
+            }
+            p {
+              width: 100%;
+              font-size: 2vw;
+              text-align: center;
+            }
+            .info-slider {
+              @include mixin.displayFlex(row, center, center);
+              .info-box {
+                display: block;
+                width: 50%;
+                padding: 1em;
+                h2 {
+                  font-size: 2.5vw;
+                  text-align: center;
+                }
+                span {
+                  display: block;
+                  width: 100%;
+                  font-size: 4.5vw;
+                  text-align: center;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .wrapper {
+    .content {
+      .title-img {
+        h1 {
+          width: 100%;
+          text-align: center;
+          font-size: 5vw;
+        }
+        img {
+          width: 55%;
+          padding: 0;
+        }
+      }
+      .wrapper-slider {
+        width: 100%;
+        .header-slider {
+          button {
+            font-size: 4.3vw;
+          }
+        }
+        .slider {
+          .content-slider {
+            p {
+              font-size: 3.4vw;
+            }
+            .info-slider {
+              @include mixin.displayFlex(column, center, center);
+              .info-box {
+                width: 100%;
+                h2 {
+                  font-size: 4vw;
+                }
+                span {
+                  font-size: 8vw;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
